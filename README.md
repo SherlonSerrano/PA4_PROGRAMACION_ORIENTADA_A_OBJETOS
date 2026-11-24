@@ -10,7 +10,7 @@ jerarquía de clases (clase abstracta e interface), colecciones de objetos
 - [Nombre] - Subclases Laptop, Procesador y Accesorio
 - [Nombre] - Clase Inventario (colecciones)
 - [Nombre] - Main y ReporteInventario
-- [Nombre] - Pruebas, README y diagrama
+- [Ricardo Moisés Chauca Velazco] - Pruebas, README y diagrama
 
 ## Instrucciones de ejecución
 1. Requiere JDK 21 e IntelliJ IDEA.
