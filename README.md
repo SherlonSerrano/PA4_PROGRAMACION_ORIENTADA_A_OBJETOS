@@ -7,8 +7,8 @@ jerarquía de clases (clase abstracta e interface), colecciones de objetos
 
 ## Integrantes
 - [Sherlon Lisber Serrano Garcia] - Repositorio, clase abstracta Producto e interface Descontable
-- [Nombre] - Subclases Laptop, Procesador y Accesorio
-- [Nombre] - Clase Inventario (colecciones)
+- [Alvaro Carita Huaman] - Subclases Laptop, Procesador y Accesorio
+- [Yanire Dayana Alcantara Salinas] - Clase Inventario (colecciones)
 - [Angelo Leonardo Fabrizio Cuadros Castillo] - Main y ReporteInventario
 - [Ricardo Moisés Chauca Velazco] - Pruebas, README y diagrama
 
