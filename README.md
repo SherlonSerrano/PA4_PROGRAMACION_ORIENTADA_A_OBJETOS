@@ -9,7 +9,7 @@ jerarquía de clases (clase abstracta e interface), colecciones de objetos
 - [Sherlon Lisber Serrano Garcia] - Repositorio, clase abstracta Producto e interface Descontable
 - [Nombre] - Subclases Laptop, Procesador y Accesorio
 - [Nombre] - Clase Inventario (colecciones)
-- [Nombre] - Main y ReporteInventario
+- [Angelo Leonardo Fabrizio Cuadros Castillo] - Main y ReporteInventario
 - [Ricardo Moisés Chauca Velazco] - Pruebas, README y diagrama
 
 ## Instrucciones de ejecución
