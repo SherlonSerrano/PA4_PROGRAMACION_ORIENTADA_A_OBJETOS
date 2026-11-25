@@ -1,66 +1,60 @@
 package pe.edu.isil;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-
 public class PruebaProducto {
 
-    // Subclases temporales solo para probar la clase abstracta (no se suben al repo)
-    static class ProductoPrueba extends Producto {
-        ProductoPrueba(String codigo, String nombre, double precio, int stock) {
-            super(codigo, nombre, precio, stock);
-        }
-
-        @Override
-        public int calcularGarantiaMeses() {
-            return 12;
-        }
-
-        @Override
-        public String getTipo() {
-            return "Prueba";
-        }
-    }
-
-    static class ProductoDescontablePrueba extends ProductoPrueba implements Descontable {
-        ProductoDescontablePrueba(String codigo, String nombre, double precio, int stock) {
-            super(codigo, nombre, precio, stock);
-        }
-
-        @Override
-        public void aplicarDescuento(double porcentaje) {
-            precio = precio - (precio * porcentaje / 100);
-        }
-    }
-
     public static void main(String[] args) {
-        Producto a = new ProductoPrueba("P001", "Mouse", 59.90, 30);
-        Producto b = new ProductoPrueba("p001", "Otro nombre", 100.00, 1);
-        Producto c = new ProductoPrueba("P002", "Teclado", 189.90, 20);
 
-        System.out.println("a.equals(b): " + a.equals(b));
-        System.out.println("a.equals(c): " + a.equals(c));
-        System.out.println("mismo hashCode a y b: " + (a.hashCode() == b.hashCode()));
+        // Crear una laptop
+        Laptop laptop = new Laptop(
+                "L001", "ASUS TUF Gaming", 3500, 5,
+                16, "Intel Core i7"
+        );
 
-        HashSet<Producto> registro = new HashSet<>();
-        System.out.println("add a: " + registro.add(a));
-        System.out.println("add b (código repetido): " + registro.add(b));
-        System.out.println("add c: " + registro.add(c));
-        System.out.println("tamaño del HashSet: " + registro.size());
+        // Crear un procesador
+        Procesador procesador = new Procesador(
+                "P001", "Intel Core i9", 2200, 10,
+                16, 5.8
+        );
 
-        ArrayList<Producto> lista = new ArrayList<>();
-        lista.add(c);
-        lista.add(a);
-        Collections.sort(lista);
-        System.out.println("Primero tras ordenar (el más barato): " + lista.get(0).getNombre());
+        // Crear un accesorio
+        Accesorio accesorio = new Accesorio(
+                "A001", "Teclado Logitech", 250, 8,
+                "Teclado mecánico"
+        );
 
-        Producto d = new ProductoDescontablePrueba("P003", "Monitor", 500.00, 5);
-        System.out.println("d es Descontable: " + (d instanceof Descontable));
-        System.out.println("a es Descontable: " + (a instanceof Descontable));
-        ((Descontable) d).aplicarDescuento(10);
-        System.out.println("Precio con 10% de descuento: " + d.getPrecio());
+        // Mostrar productos
+        System.out.println("===== PRODUCTOS =====");
 
-        System.out.println(a);
+        System.out.println(laptop);
+        System.out.println(procesador);
+        System.out.println(accesorio);
+
+        // Aplicar descuentos
+        laptop.aplicarDescuento(20);
+        accesorio.aplicarDescuento(10);
+
+        // Mostrar precios actualizados
+        System.out.println("\n===== PRECIOS CON DESCUENTO =====");
+
+        System.out.println("Laptop: S/ " + laptop.getPrecio());
+        System.out.println("Procesador: S/ " + procesador.getPrecio());
+        System.out.println("Accesorio: S/ " + accesorio.getPrecio());
+        // Prueba 1: descuento superior al permitido para Laptop
+        System.out.println("\n===== PRUEBA DE LIMITES =====");
+
+        try {
+            laptop.aplicarDescuento(25);
+            System.out.println("Error: se aceptó un descuento no permitido.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Laptop: " + e.getMessage());
+        }
+
+        // Prueba 2: descuento superior al permitido para Accesorio
+        try {
+            accesorio.aplicarDescuento(15);
+            System.out.println("Error: se aceptó un descuento no permitido.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Accesorio: " + e.getMessage());
+        }
     }
 }
