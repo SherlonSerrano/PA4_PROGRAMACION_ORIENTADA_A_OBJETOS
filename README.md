@@ -36,4 +36,4 @@ jerarquía de clases (clase abstracta e interface), colecciones de objetos
 
 
 ## Video de exposición
-(Pegar el enlace de YouTube)
+([Enlace exposición](https://youtu.be/LjjS7dRArOQ))
